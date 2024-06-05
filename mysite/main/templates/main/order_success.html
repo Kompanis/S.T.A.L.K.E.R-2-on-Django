@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Спасибо за покупку!</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/style_reg.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Спасибо за покупку! Ожидайте выхода продукта.</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+        </form>
+        <a href="{% url 'home' %}">Назад</a>
+    </div>
+</body>
+</html>

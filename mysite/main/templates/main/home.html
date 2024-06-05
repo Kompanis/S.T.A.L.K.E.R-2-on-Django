@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main/css/styles.css' %}">
+</head>
+<body>
+<style>
+
+</style>
+<div class="container">
+    <h1>S.T.A.L.K.E.R 2</h1>
+    <img src="{% static 'main/s23.jpeg' %}" alt="Обложка игры" class="game-cover">
+    <h3>
+        <strong>История игры S.T.A.L.K.E.R 2:</strong> <br>
+        S.T.A.L.K.E.R 2 — долгожданное продолжение легендарной серии игр, созданных украинской студией GSC Game World. События игры разворачиваются в альтернативной реальности, где произошла вторая катастрофа на Чернобыльской АЭС. Это событие привело к появлению "Зоны" — опасной и загадочной территории, полной аномалий, мутантов и ценных артефактов. Игроки возьмут на себя роль сталкера, который пытается выжить и раскрыть тайны этой опасной территории.
+    </h3>
+
+
+    <div class="video-container">
+        <iframe width="800" height="530" src="{% static 'main/css/trailer.mp4' %}" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="features">
+        <h2>Особенности игры</h2>
+        <p>ИССЛЕДУЙТЕ ПОЛНУЮ ОПАСНОСТЕЙ ЗОНУ ОТЧУЖДЕНИЯ ВОКРУГ ЧЕРНОБЫЛЯ</p>
+        <p>ЭПИЧЕСКИЙ НЕЛИНЕЙНЫЙ СЮЖЕТ В ЕДИНОМ ОТКРЫТОМ МИРЕ</p>
+        <p>РАЗНООБРАЗНЫЕ ПРОТИВНИКИ И СОТНИ КОМБИНАЦИЙ ОРУЖИЯ</p>
+        <p>ЛЕГЕНДАРНЫЕ МУТАНТЫ С ОТЛИЧАЮЩИМИСЯ МОДЕЛЯМИ ПОВЕДЕНИЯ</p>
+        <p>АРТЕФАКТЫ БАСНОСЛОВНОЙ ЦЕННОСТИ И НЕ ПРОЩАЮЩИЕ ОШИБОК АНОМАЛИИ</p>
+    </div>
+
+    <div class="system-requirements">
+        <div class="column">
+            <h2>Минимальные требования:</h2>
+            <p><strong>OS:</strong> Windows 10</p>
+            <p><strong>Процессор:</strong> AMD Ryzen 5 1600X / Intel Core i5-7600K</p>
+            <p><strong>Оперативная память:</strong> 8 ГБ</p>
+            <p><strong>Видеокарта:</strong> AMD Radeon RX 580 8 ГБ / NVIDIA GeForce GTX 1060 6 ГБ</p>
+            <p><strong>Свободное место на диске:</strong> 150 ГБ</p>
+        </div>
+        <div class="column">
+            <h2>Рекомендуемые требования:</h2>
+            <p><strong>OS:</strong> Windows 11</p>
+            <p><strong> Процессор:</strong> AMD Ryzen 7 3700X / Intel Core i7-9700K </p>
+            <p><strong>Оперативная память:</strong> 16 ГБ</p>
+            <p><strong>Видеокарта:</strong> AMD Radeon RX 5700 XT 8 ГБ / NVIDIA GeForce RTX 2070 SUPER 8 ГБ </p>
+            <p><strong>Свободное место на диске:</strong> 150 ГБ</p>
+        </div>
+    </div>
+
+    <div class="countdown">
+        <h1>До выхода игры осталось:</h1>
+        <h1><div id="countdown-timer"></div></h1>
+    </div>
+
+    <div class="social-buttons">
+        <h3>Поделитесь с друзьями</h3>
+        <a href="https://facebook.com" class="button">Facebook</a>
+        <a href="https://twitter.com" class="button">Twitter</a>
+        <a href="https://vk.com" class="button">VK</a>
+    </div>
+
+    <div class="about-developers">
+        <h3>О разработчиках</h3>
+        <h3>GSC Game World — ведущая украинская студия, известная своими играми серии "Сталкер" и "Казаки". Основанная в 1995 году, студия завоевала мировое признание за свои инновационные и качественные проекты.</h3>
+    </div>
+
+    <a href="{% url 'order' %}" class="button">Заказать</a>
+    <a href="{% url 'login' %}" class="button">Вход</a>
+    <a href="{% url 'register' %}" class="button">Регистрация</a>
+
+</div>
+
+<script>
+    var countDownDate = new Date("Sep 6, 2024 00:00:00").getTime();
+
+    var x = setInterval(function() {
+
+        var now = new Date().getTime();
+
+        var distance = countDownDate - now;
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("countdown-timer").innerHTML = days + "д " + hours + "ч "
+        + minutes + "м " + seconds + "с ";
+
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown-timer").innerHTML = "Игра вышла!";
+        }
+    }, 1000);
+</script>
+
+</body>
+</html>
