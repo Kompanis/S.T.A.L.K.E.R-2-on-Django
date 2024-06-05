@@ -10,10 +10,9 @@
 
     Склонируйте проект с GitHub в необходимую вам директорию. Все команды прописывать в терминал:
 
-git clone https://github.com/Kompanis/S.T.A.L.K.E.R-2-on-Django/edit/master
+git clone -b master https://github.com/Kompanis/S.T.A.L.K.E.R-2-on-Django
 
-
-    Создайте виртуальное окружение и активируйте его:
+    Може виртуальное окружение и активируйте его:
 
 python -m venv venv
 venv\Scripts\activate
